@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home - To-Do{% endblock %}
+{% block content %}
+<h1>Welcome</h1>
+<p>Choose where you want to go:</p>
+<ul>
+  <li><a href="{{ url_for('tasks_view') }}">Task list</a></li>
+  <li><a href="{{ url_for('about') }}">About this app</a></li>
+</ul>
+{% endblock %}

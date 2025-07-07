@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Tasks - To-Do{% endblock %}
+{% block content %}
+<h1>Your tasks</h1>
+<form method="post" class="add-form">
+  <input type="text" name="task" placeholder="New task" required />
+  <button type="submit">Add</button>
+</form>
+
+<ul class="tasks">
+  {% for t in tasks %}
+    <li class="task{% if t.done %} done{% endif %}">
+      {{ t.text }}
+      <div class="actions">
+        <a href="{{ url_for('mark_done', task_id=t.id) }}">{% if t.done %}Undo{% else %}Done{% endif %}</a>
+        <a href="{{ url_for('delete', task_id=t.id) }}" class="delete">x</a>
+      </div>
+    </li>
+  {% else %}
+    <li>No tasks yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

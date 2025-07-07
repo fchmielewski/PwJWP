@@ -1,0 +1,5 @@
+Flask>=3.0
+SQLAlchemy==2.0.40
+black
+flake8
+pylint

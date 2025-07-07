@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem auto;
+    max-width: 600px;
+    line-height: 1.4;
+  }
+  nav a { margin-right: .5rem; }
+  ul.tasks {
+    list-style: none;
+    padding-left: 0;
+  }
+  li.task {
+    display: flex;
+    justify-content: space-between;
+    padding: .3rem .5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  li.task.done { text-decoration: line-through; color: #888; }
+  .actions a { margin-left: .5rem; text-decoration: none; }
+  .actions .delete { color: crimson; }
+  .add-form { margin-bottom: 1rem; }

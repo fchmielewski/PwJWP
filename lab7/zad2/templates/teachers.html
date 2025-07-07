@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Teachers{% endblock %}
+{% block content %}
+<h1>Teachers</h1>
+<form method="post" class="add-form">
+  <input type="text" name="name"     placeholder="Name"    required />
+  <input type="text" name="subject"  placeholder="Subject" required />
+  <input type="text" name="time"     placeholder="Time"    required />
+  <button type="submit">Add</button>
+</form>
+
+<table class="list">
+  <thead>
+    <tr><th>Name</th><th>Subject</th><th>Time</th><th></th></tr>
+  </thead>
+  <tbody>
+  {% for t in teachers %}
+    <tr>
+      <td>{{ t.name }}</td>
+      <td>{{ t.subject }}</td>
+      <td>{{ t.time }}</td>
+      <td><a href="{{ url_for('delete_teacher', teacher_id=t.id) }}" class="delete">x</a></td>
+    </tr>
+  {% else %}
+    <tr><td colspan="4">No teachers yet.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
